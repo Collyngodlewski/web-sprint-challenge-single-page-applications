@@ -2,7 +2,6 @@ import React from "react";
 
 export default function PizzaForm(props) {
   const { values, submit, change, disabled, errors } = props;
-
   const onSubmit = (evt) => {
     evt.preventDefault();
     submit();
@@ -18,17 +17,14 @@ export default function PizzaForm(props) {
     <form id ="pizza-form" onSubmit={onSubmit}>
       <div className="pizza-group submit">
         <h2>Build Your Own Pizza</h2>
-        <div className="errors">
-          <div>{errors.size}</div>
-          <div>{errors.sauce}</div>
-        </div>
+       
       </div>
       <div className="form-group inputs">
         <h4>Build Your Own Pizza</h4>
         <label>
           Choice of Size
-          <p>Required</p> {/*} see if this showsu p within a form*/}
-          <select id="size-dropdown" onChange={onChange} value={values.size} name="size">
+          <p>Required</p> 
+          <select value={values.size} name="size" onChange={onChange} id='size-dropdown' >
             <option value="">Select</option>
             <option value="small">Small</option>
             <option value="medium">Medium</option>
@@ -198,23 +194,39 @@ export default function PizzaForm(props) {
         <div className='specialInstructions'>
             <h2>Special Instructions</h2>
             <label>
-                <input id='special-text'
-                value={values.specialInstructions}
-                onChanges={onChange}
-                name='specialInstructions'
+                <input 
                 type='text'
-                placeholder="Anything else you'd like to add?"
-                />
+                value={values.specialInstructions}
+                onChange={onChange}
+                name='specialInstructions'
+                placeholder="Anything special you'd like to add?"
+                id='special-text'/>
             </label>
           </div>
+          
+          <div className="errors">
+          <div>{errors.size}</div>
+          <div>{errors.sauce}</div>
+        </div>
 
+        <div className='nameOrder'>
+            <label>Name for Order:
+                <input  
+                value={values.name}
+                onChange={onChange}
+                name='name'
+                type='text'
+                id='name-input'/>
+            </label>
+            </div>
 
         <div className ='submit'>
-        <button id = "order-button">
+        <button id = "order-button" disabled={disabled}>
             Add to Order
         </button>
         </div>
       </div>
     </form>
   );
+
 }
