@@ -210,13 +210,13 @@ export default function PizzaForm(props) {
         </div>
 
         <div className='nameOrder'>
-            <label>Name for Order:
+            <label id='name-input'>Name for Order:
                 <input  
                 value={values.name}
                 onChange={onChange}
                 name='name'
                 type='text'
-                id='name-input'/>
+                />
             </label>
             </div>
 

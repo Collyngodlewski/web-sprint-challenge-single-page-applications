@@ -16,7 +16,7 @@ const initialFormValues ={
   pepperoni: false,
   sausage: false,
   canadianBacon: false,
-  spicyitalianSausage: false,
+  spicyItalianSausage: false,
   grilledChicken: false,
   onions: false,
   greenPepper: false,
@@ -79,6 +79,7 @@ const postNewOrder = newOrder => {
       toppings: ['pepperoni','sausage','canadianBacon','spicyItalianSausage','grilledChicken','onions','greenPepper','dicedTomatos','blackOlives','roastedGarlic','artichokeHearts','threeCheese','pineapple','extraCheese'].filter(topping => !!formValues[topping]),
       name: formValues.name.trim()
     }
+    console.log(newOrder);
     postNewOrder(newOrder);
   };
 

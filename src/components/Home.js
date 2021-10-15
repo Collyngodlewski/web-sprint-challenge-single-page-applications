@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div className='home-wrapper'>
             <img className='pizzaPhoto' src={Pizza}/>
-            <button 
+            <button id="order-pizza"
                 onClick={routeToOrder}
                 className='md-button order-button'
                 >
